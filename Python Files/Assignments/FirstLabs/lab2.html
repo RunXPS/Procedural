@@ -1,0 +1,71 @@
+<!doctype html>
+<head>
+    <title>Lab 1: Scientific Calculations</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="lab1.css"/>
+</head>
+<body>
+    <h2>Lab 2: Boolean</h2>
+
+<p><strong>Introduction: Claim of order</strong>
+    When testing for the boolean order of operations in python, I went through several iterations of code
+before finally finding the lines which backed my claims. When I finished, I found the operations to be
+</p>
+<pre class="pybox">
+&gt;&gt;&gt; First
+&gt;&gt;&gt; "not" statements
+&gt;&gt;&gt; "and" statements
+&gt;&gt;&gt; "or" statements
+&gt;&gt;&gt; Last
+</pre>
+
+<p><strong>Evidence: "and" takes precedence over "or"</strong>
+    When examining the code below, it can be seen that the lines are almost identical, besides a group of
+parenthesis, but have opposite outputs. This is because in the first line, python carries out its order
+of operations without interupption, carrying out the "and" statement, which checks if both objects are True,
+and returns "True" if they are, and "False" if they are not. Because both objects are not "True", this
+statement returns "False" and moves on to the "or" statement, taking the result of the "and" statement and 
+comparing it to "True". This statement returns "True", as "or: statements check if one of the objects on either 
+side of it are "True", and returns "True" if there is. Because all the computations have been completed, the 
+terminal returns the final result, that being "True".
+    In the second line, the parenthesis around the "or" statement break the order of operations and force 
+it to compute first. That statement returns "True", which is then used in the "and" statement. Using the
+same logic as described above, the result of the "and" is False, which leaves all the computations complete,
+and "False" as the final result to be returned.
+</p>
+<pre class="pybox">
+&gt;&gt;&gt;True or True and False
+True
+&gt;&gt;&gt;(True or True) and False
+False
+</pre>
+<p><strong>Evidence: "not" takes precedence over "or"</strong>
+    Looking at the two statements, it can be seen that, similarly to the previous section, the lines 
+are almost identical besides a pair of parenthesis. This is because, in the first line, order of operations
+runs its course, the "not" statement turning a "True" object to "False" and then evaluates the "or" statement.
+Because at least one object is "True", the statement returns "True", which is the final result.
+    The second line again breaks the order of operations, forcing the "or" statement to evaluate first. The 
+result is "True" which is then flipped to its opposite by the "not" statement, leaving the final result "False".
+</p>
+<pre class="pybox">
+&gt;&gt;&gt;not True or True 
+True
+&gt;&gt;&gt;not (True or True)
+False
+</pre>
+<p><strong>Evidence: "not" takes precedence over "and"</strong>
+    Finding the evidence for this claim took a lot of trial and error, but the code below proves that "not"
+statemnets take precedence over "and" statements.
+    This one line of code seems rather inconspicuious at first glance, but truely does prove "not" statements'
+precedence. If we were to evaluate the expression assuming that "and" statements follow first, we would need
+to start on the right. "True" and "True" are both "True" statements, returning the result "True". Now, this 
+theory becomes problematic, as there is no way to compute "True and not True" without being impeeded by a 
+"not" statement in the center, therefore, it should produce an error. 
+    Because there is no error, this suggests that not was not evaluated last, but first, clearing the statement
+of any impediments.
+</p>
+<pre class="pybox">
+&gt;&gt;&gt;True and not True and True
+</pre>
+</body>
+</html>

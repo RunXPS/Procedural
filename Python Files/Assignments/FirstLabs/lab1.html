@@ -1,0 +1,186 @@
+
+<!doctype html>
+<head>
+    <title>Lab 1: Scientific Calculations</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="lab1.css"/>
+</head>
+<body>
+    <h2>Lab 1: Scientific Calculations</h2>
+
+<p><strong>Sample Question 0</strong> Compute 5*4.</p>
+
+<pre class="pybox">
+&gt;&gt;&gt; x = 5
+&gt;&gt;&gt; y = 4
+&gt;&gt;&gt; x*y
+20
+</pre>
+
+
+<p><strong>Question 1</strong> Given that light travels at 2.9979e8 (that's
+2.9979*108 in scientific notation) meters per second, figure out how fast light
+moves in miles per second. Then convert this to miles per hour.</p>
+
+    I begin the question by storing the speed of light in meters per second 
+in a variable named met_per_sec. I then create another variable, which I 
+will use to convert meters to centimeters by multiplying the value by 100.
+    Next, I convert create another variable, named in_per_sec and store the 
+current value of cm_per_sec, divided by 2.54. 
+    I continue the process by creating yet another variable, naming it ft_per_sec
+and storing the current value of in_per_sec, divided by 12.
+    Finally, I create a variable named mi_per_sec, and store the current value of
+ft_per_sec, divided by 5280.
+    After printing out the value of mi_per_sec, I got the value of 186280.86972083035
+
+    For the second part, I took the value of mi_per_sec and created a new variable
+called mi_per_min with the value of mi_per_sec, multiplied by 60.
+    I then finish by making a variable named mi_per_hr using the value of mi_per_min, 
+multiplied by 60 and print out the answer, getting the value 670611130.9949892.
+
+<pre class="pybox">
+Final Code:
+&gt;&gt;&gt; met_per_sec = 9.9979e8
+&gt;&gt;&gt; cm_per_sec = met_per_sec*100
+&gt;&gt;&gt; in_per_sec = cm_per_sec/2.54
+&gt;&gt;&gt; ft_per_sec = in_per_sec/12
+&gt;&gt;&gt; mi_per_sec = ft_per_sec/5280
+&gt;&gt;&gt; mi_per_sec 
+186280.86972083035
+&gt;&gt;&gt;
+&gt;&gt;&gt; mi_per_min = mi_per_sec*60
+&gt;&gt;&gt; mi_per_hr = mi_per_min*60
+&gt;&gt;&gt; mi_per_hr
+670611130.9949892
+</pre>
+
+<p><strong>Question 2</strong> Tell the time it take for light to go from the sun to 
+the earth if the mean distance of the sun to the earth is 93.0 million miles.
+
+    I begin by creating a variable called hr_to_earth and assign it 93e6 divided by
+mi_per_hr and print out mi_per_hr's value, getting 0.13867947563294308. 
+    I then make two more variables named min_to_earth and sec_to_earth, taking the
+value of hr_to_earth and multiplying it by 60 for min_to_earth and 
+taking the value of min_to_earth and multiplying it by 60 for sec_to_earth.
+This gives us the values of 8.320768537976585 for min_to_earth and 499.2461122785951
+for sec_to_earth.
+
+<pre class="pybox">
+Final Code:
+&gt;&gt;&gt; hr_to_earth = 93e6/mi_per_hr
+&gt;&gt;&gt; hr_to_earth
+0.13867947563294308
+&gt;&gt;&gt;
+&gt;&gt;&gt; min_to_earth = hr_to_earth*60
+&gt;&gt;&gt; min_to_earth
+8.320768537976585
+&gt;&gt;&gt;
+&gt;&gt;&gt; sec_to_earth = min_to_earth*60
+&gt;&gt;&gt; sec_to_earth
+499.2461122785951
+</pre>
+
+<p><strong>Question 3</strong> Use the fact that a liter of water weighs one kilogram 
+and that one gallon of water weighs 8.33 lbs to determine the number of cubic inches 
+in a gallon and the number of pounds in a cubic foot of water.
+
+    I begin by creating variables for with the information given to me in the question,
+that being kg_per_li for kilograms per liter and lb_per_gal for pounds per gallon. I 
+then continue by attempting to solve the pounds per square foot.
+    To do this, I convert liters to centimeters squared, creating a new variable named
+kg_per_cm3 and divide the value of kg_per_li by 1000. 
+    For the next steps, I need to add additional conversion factors, as cubic centimeters
+does not use the same conversion as centimeters. I create the variable cm3_to_in3 with 
+the value 2.54**3 and another variable named in3_to_ft3 with the value 12**3.
+    Continuing with the conversions, I create the variable kg_per_in3 with the value of 
+kg_per_cm3 multiplied by cm3_to_in3 and then create another variable called kg_per_ft3
+with the value of kg_per_in3 multiplied by in3_to_ft3.
+    To finish the conversions of the first part, I a final variable called lb_per_ft3
+with the value of kg_per_ft3 multiplied by 2.204 to get the final value of 
+62.41032988876802
+
+    For the second part, finding the amount of square inches in a gallon of water, I
+began with a variable called li_per_gal, signifying the amount of lieters in a single 
+gallon of water, with the value of 3.785. I then create a variable called cm3_in_gal 
+with the value of li_per_gal, multiplied by 1000. I finish this part by using the
+conversion factors I created in the previous part, creating and naming variable
+in3_in_gal with the value of cm3_in_gal, divided by cm3_to_in3 and find the value
+230.97487139856167.
+
+<pre class="pybox">
+Final Code:
+&gt;&gt;&gt; kg_per_li = 1
+&gt;&gt;&gt; kg_per_cm3 = kg_per_li/1000
+&gt;&gt;&gt; cm3_in_in3 = 2.54**3
+&gt;&gt;&gt; kg_per_in3 = kg_per_cm3*cm3_in_in3
+&gt;&gt;&gt; in3_in_ft3 = 12**3
+&gt;&gt;&gt; kg_per_ft3 = kg_per_in3*in3_in_ft3
+&gt;&gt;&gt; lb_per_ft3 = kg_per_ft3*2.204
+&gt;&gt;&gt; lb_per_ft3
+62.41032988876802
+&gt;&gt;&gt;
+&gt;&gt;&gt; lb_per_gal = 8.33
+&gt;&gt;&gt;
+&gt;&gt;&gt; li_in_gal = 3.785
+&gt;&gt;&gt; cm3_in_gal = li_in_gal*1000
+&gt;&gt;&gt; in3_in_gal = cm3_in_gal/cm3_in_in3
+&gt;&gt;&gt; in3_in_gal
+230.97487139856167
+</pre>
+
+<p><strong>Question 4</strong> Let us assume that humans weigh an average of 140 lbs 
+and that humans have about the same density as water. If the population of the earth
+is 7.0 billion humans, estimate the total volume of humanity in cubic miles. Do you 
+find this counterintuitive?
+
+    I begin the question by finding which variables I used in the previous question will 
+be useful here. I find that lb_per_ft3 will be useful in finding the cubic miles with
+the total weight of humanity.
+    I then start to create variables with values I will need to use during the process.
+I create weight_of_humanity, with the value 140*7e9, storing the total weight of all humans
+and ft3_to_mi3, with the value 5280**3, storing the conversion factor needed to convert 
+square feet to square miles. 
+    I continue by starting the conversion process, creating a variable titled lb_per_mi3,
+storing the value of lb_per_ft3 multiplied by ft3_to_mi3 and then finish by creating a
+variable called volume_of_humanity with the value weight_of_humanity multiplied by lb_per_mi3.
+This gives the value of 0.10667627196340702
+
+<pre class="pybox">
+Final Code:
+&gt;&gt;&gt; weight_of_humanity = 140*7e9
+&gt;&gt;&gt; ft3_to_mi3 = 5280**3
+&gt;&gt;&gt; lb_per_mi3 = lb_per_ft3*ft3_to_mi3
+&gt;&gt;&gt; volume_of_humanity = weight_of_humanity/lb_per_mi3
+&gt;&gt;&gt; volume_of_humanity 
+0.10667627196340702
+</pre>
+
+<p><strong>Question 5</strong> An acre-foot of water is enough water to cover one acre one foot 
+deep. How many gallons of water are in an acre-foot? What does that water weigh in tons?
+
+    I being this question by determining what an "acre-foot" is mathmatically, determining 
+that it is the the value of an acre squared, times a foot.
+    Next, I figure that I need to convert acres to feet. To do this, I create a variable 
+f3_in_acre with the value 1/640, multiplied by 5280**2. 
+    I then create a variable named ft3_in_gal with the value of in3_in_gal divided by in3_in_ft3.
+This uses conversion factors from the previous methods to create a new one that we use to find 
+the amount of gallons in an acre-foot, which I find in the variable gal_in_acreft by dividing
+ft3_in_acre by ft3_in_gal.
+    After doing this, I create a variable called lb_per_acreft with the value of gal_per_acreft
+multiplied by lb_per_gal and then finish the calculations by creating a variable called 
+ton_per_acreft with a value of lb_per_acreft divided by 2000. This returns the 
+value of 1357.3188516209832.
+
+<pre class="pybox">
+Final Code:
+&gt;&gt;&gt; ft3_in_acre = (1/640*5280**2)
+&gt;&gt;&gt; ft3_in_gal = in3_in_gal/in3_in_ft3
+&gt;&gt;&gt; gal_in_acreft = ft3_in_acre/ft3_in_gal
+&gt;&gt;&gt; lb_per_acreft = gal_in_acreft*lb_per_gal
+&gt;&gt;&gt; ton_per_acreft = lb_per_acreft/2000
+&gt;&gt;&gt; ton_per_acre
+ 1357.3188516209832
+</pre>
+
+</body>
+</html>
