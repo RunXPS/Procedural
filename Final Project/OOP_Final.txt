@@ -1,0 +1,5 @@
+After the tragic loss of a Mr. Anthony Stark in Avengers: Endgame my soul has been left empty, my mind decrepit, like a large object with a small brain. 
+Specifically, Dr. Stark’s personal AI assistant, Jarvis, is the focal point of my loss. My group figured that we commemorate the tragic loss of Anthony Stark 
+and that we also commemorate a most legendary Procedural and Object-Oriented Programming instructor by recreating a Python-based AI assistant for 
+Windows and Mac OS based on Dr. John Morrison. The AI bot will do a variety of tasks, from welcoming the user to having engaging conversations with 
+the user drawing upon all of Dr. Morrison’s legendary catch phrases.
